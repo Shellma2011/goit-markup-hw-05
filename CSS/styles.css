@@ -177,6 +177,8 @@ ul {
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .site-nav .link:hover,
@@ -463,6 +465,12 @@ ul {
 
   background-color: var(--white-color);
   color: var(--social-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* transition: var(--white-color) 250ms cubic-bezier(0.4, 0, 0.2, 1)
+    var(--social-color); */
+  /* transition: 250ms cubic-bezier(0.4, 0, 0.2, 1); */
 }
 
 .social-link:hover,
@@ -494,24 +502,28 @@ ul {
   border: 1px solid var(--social-color);
   border-radius: 4px;
   color: var(--social-color);
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.regular-clients-link:hover,
+.regular-clients-link:focus {
+  /* color: var(--accent-blue); */
+  border: 1px solid var(--accent-blue);
+  cursor: pointer;
 }
 
 .clients-icon {
   width: 106px;
   height: 60px;
   fill: currentColor;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-icon:hover,
 .clients-icon:focus {
-  color: var(--accent-blue);
-  cursor: pointer;
-}
-
-.regular-clients-link:hover,
-.regular-clients-link:focus {
-  color: var(--accent-blue);
-  border: 1px solid var(--accent-blue);
+  fill: var(--accent-blue);
   cursor: pointer;
 }
 
@@ -591,6 +603,8 @@ ul {
 
   background-color: var(--social-footer-backgroundcolor);
   color: var(--white-color);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-footer:hover,
@@ -632,6 +646,8 @@ ul {
   padding: 10px 32px;
   min-width: 200px;
   min-height: 50px;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.primary:hover,
@@ -652,6 +668,10 @@ ul {
   text-align: center;
 
   padding: 6px 22px;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button.secondary:hover,
@@ -694,7 +714,6 @@ ul {
   margin-right: 30px;
   margin-bottom: 30px;
   border: 1px solid var(--project-group-container-line-color);
-  /* background: var(--project-group-container-background-color); */
 }
 
 .project-group-element:hover {
