@@ -34,6 +34,8 @@
   --logo-company-border: rgba(175, 177, 184, 1);
   --social-color: #afb1b8;
   --social-footer-backgroundcolor: rgba(255, 255, 255, 0.1);
+  --backdrop-color: rgba(0, 0, 0, 0.2);
+  --backdrop-bg-color: rgba(0, 0, 0, 0.1);
 }
 
 body {
@@ -769,12 +771,12 @@ ul {
 
   background-color: var(--project-photo-popup-bg-color);
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 2500ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 0;
 }
 
-.project-photo:hover .project-group-overlay,
-.project-photo:focus .project-group-overlay {
+.project-group-element:hover .project-group-overlay,
+.project-group-element:focus .project-group-overlay {
   transform: translateY(-100%);
   opacity: 1;
 }
@@ -807,8 +809,9 @@ ul {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--box-shadow-our-team-elements);
+  background-color: var(--backdrop-color);
 
+  z-index: 9;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   opacity: 1;
 }
@@ -819,22 +822,41 @@ ul {
 }
 
 .modal {
-  min-width: 528px;
-  min-height: 581px;
-  background-color: var(--white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50% -50%);
+  transform: translate(-50%, -50%);
+
+  min-width: 528px;
+  min-height: 581px;
+  background-color: var(--white-color);
 }
 
 .button-close-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
   width: 30px;
   height: 30px;
-  fill: currentColor;
-
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  box-sizing: border-box;
   border-radius: 50%;
+
+  border: 1px solid var(--backdrop-bg-color);
+  background-color: var(--white-color);
+  cursor: pointer;
+}
+
+.close-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 11px;
+  height: 11px;
+  fill: currentColor;
 }
